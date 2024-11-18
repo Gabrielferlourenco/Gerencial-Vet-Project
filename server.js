@@ -11,7 +11,7 @@ const sequelize = new Sequelize("petshop", "root", "root", {
 });
 
 const Pet = sequelize.define(
-  "Pet",
+  "Pet", // Cria a tabela Pets no MySQL
   {
     petName: {
       type: Sequelize.STRING,
@@ -83,6 +83,16 @@ sequelize
   .catch((error) =>
     console.error("Erro ao sincronizar o banco de dados:", error)
   );
+
+// Rota para exibir os dados em JSON
+app.get("/pets", async (req, res) => {
+  try {
+    const pets = await Pet.findAll();
+    res.json(pets);
+  } catch (error) {
+    res.status(500).send("Erro ao carregar os dados.");
+  }
+});
 
 // Iniciando o servidor
 app.listen(port, () => {
