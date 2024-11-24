@@ -6,7 +6,7 @@ body {
 .form-container {
   max-width: 500px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 25px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,7 +24,7 @@ label {
 input,
 select,
 button {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
